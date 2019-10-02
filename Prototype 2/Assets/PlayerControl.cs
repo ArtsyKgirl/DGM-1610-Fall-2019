@@ -8,6 +8,8 @@ public class PlayerControl : MonoBehaviour
     public float speed = 10.0f;
     public float xRange = 10.0f;
 
+     public GameObject projectileprefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,14 @@ public class PlayerControl : MonoBehaviour
         }
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+
+            //Launch food at animals
+
+            Instantiate(projectileprefab, transform.position, projectileprefab.transform.rotation);
+        }
     }
 }
