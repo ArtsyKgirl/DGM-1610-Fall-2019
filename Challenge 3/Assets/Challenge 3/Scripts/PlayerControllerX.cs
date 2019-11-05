@@ -27,6 +27,7 @@ public class PlayerControllerX : MonoBehaviour
 
         // Apply a small upward force at the start of the game
         playerRb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class PlayerControllerX : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * floatForce);
         }
+    
     }
 
     private void OnCollisionEnter(Collision other)
