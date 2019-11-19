@@ -14,7 +14,7 @@ public class PlayerControllerX : MonoBehaviour
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
-    
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -29,7 +29,6 @@ public class PlayerControllerX : MonoBehaviour
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
-
     }
 
     // If Player collides with powerup, activate powerup
@@ -42,6 +41,7 @@ public class PlayerControllerX : MonoBehaviour
             powerupIndicator.SetActive(true);
             StartCoroutine(PowerupCooldown());
         }
+        
     }
 
     // Coroutine to count down powerup duration
@@ -69,10 +69,7 @@ public class PlayerControllerX : MonoBehaviour
                 enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
             }
 
-
         }
     }
-
-
 
 }
