@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     private float speed = 20.0f;
     private Rigidbody playerRb;
-   // private float zBound = 39f;
+    private float zBound = 39f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +22,14 @@ public class PlayerControl : MonoBehaviour
         playerRb.AddForce(Vector3.back * speed * verticalInput);
         playerRb.AddForce(Vector3.left * speed * horizontalInput);
 
-     //   if (transform.position.z < -zBound)
-     //   {
-     //       transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
-     //   }
-     //   if (transform.position.z > zBound)
-     //   {
-     //       transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
-     //   }
+       if (transform.position.z < -zBound)
+       {
+           transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+       }
+       if (transform.position.z > zBound)
+       {
+           transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+       }
+
     }
 }
