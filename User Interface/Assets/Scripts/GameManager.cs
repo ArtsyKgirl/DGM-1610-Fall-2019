@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator SpawnTarget()
     {
-<<<<<<< HEAD
       while (true)
       {
             yield return new WaitForSeconds(spawnRate);
@@ -63,14 +62,5 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
 
         titleScreen.gameObject.SetActive(false);
-=======
-      //while (true)
-      //{
-
-      //}
-        yield return new WaitForSeconds(spawnRate);
-        int index = Random.Range(0, targets.Count);
-        Instantiate(targets[index]);
->>>>>>> master
     }
 }

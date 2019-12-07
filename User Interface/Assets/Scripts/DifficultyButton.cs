@@ -15,6 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         button.onClick.AddListener(SetDifficulty);
+
     }
 
     // Update is called once per frame

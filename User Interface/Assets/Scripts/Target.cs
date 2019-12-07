@@ -27,6 +27,7 @@ public class Target : MonoBehaviour
     {
         
     }
+
     Vector3 RandomForce()
     {
         return Vector3.up * Random.Range(minSpeed, maxSpeed);
@@ -45,6 +46,7 @@ public class Target : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
