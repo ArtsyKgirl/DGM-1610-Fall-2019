@@ -12,10 +12,16 @@ GameObject:
   - component: {fileID: 5778835477577750744}
   - component: {fileID: 1816642197878304882}
   - component: {fileID: 6497190856998113180}
+<<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
   - component: {fileID: 8214120162412699866}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
+=======
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+>>>>>>> A Maze fix
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 10
   Prefab: {fileID: 1726047516525848319}
+<<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
   gameOver: 0
 --- !u!65 &8214120162412699866
 BoxCollider:
@@ -107,3 +114,5 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> A Maze fix

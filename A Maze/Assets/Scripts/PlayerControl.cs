@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private float speed = 20.0f;
+    private float speed = 15.0f;
     private Rigidbody playerRb;
+<<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
     private float zBound = 39f;
 =======
@@ -14,6 +15,10 @@ public class PlayerControl : MonoBehaviour
     private GameManager gameManager;
 
 >>>>>>> Finished Maze
+=======
+    private float zBound = 38.50f;
+
+>>>>>>> A Maze fix
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +30,13 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal") * speed;
+        float verticalInput = Input.GetAxis("Vertical") * speed;
 
+        horizontalInput *= Time.deltaTime;
+        verticalInput *= Time.deltaTime;
+
+<<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
         playerRb.AddForce(Vector3.back * speed * verticalInput);
         playerRb.AddForce(Vector3.left * speed * horizontalInput);
@@ -36,14 +45,21 @@ public class PlayerControl : MonoBehaviour
 =======
        if (transform.position.z < -74f)
 >>>>>>> Finished Maze
+=======
+        //playerRb.AddForce(Vector3.forward * speed * verticalInput);
+        //playerRb.AddForce(Vector3.right * speed * horizontalInput);
+
+       if (transform.position.z < -74f)
+>>>>>>> A Maze fix
        {
-           transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+           transform.position = new Vector3(transform.position.x, transform.position.y, -74f);
        }
        if (transform.position.z > zBound)
        {
            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
        }
 
+<<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 =======
         transform.Translate(0, 0, -verticalInput);
@@ -57,5 +73,14 @@ public class PlayerControl : MonoBehaviour
 
         gameManager.Finished();
 >>>>>>> Finished Maze
+=======
+        transform.Translate(0, 0, -verticalInput);
+        transform.Rotate(0, horizontalInput * speed, 0);
+
+        //if(player at the y coordinates of cube1 or cube2... cube10)
+        /*
+            cube.setgravity(1);
+         */
+>>>>>>> A Maze fix
     }
 }
