@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private float speed = 20.0f;
+    private float speed = 15.0f;
     private Rigidbody playerRb;
-    private float zBound = 39f;
+    private float zBound = 38.50f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,20 +17,30 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal") * speed;
+        float verticalInput = Input.GetAxis("Vertical") * speed;
 
-        playerRb.AddForce(Vector3.back * speed * verticalInput);
-        playerRb.AddForce(Vector3.left * speed * horizontalInput);
+        horizontalInput *= Time.deltaTime;
+        verticalInput *= Time.deltaTime;
 
-       if (transform.position.z < -zBound)
+        //playerRb.AddForce(Vector3.forward * speed * verticalInput);
+        //playerRb.AddForce(Vector3.right * speed * horizontalInput);
+
+       if (transform.position.z < -74f)
        {
-           transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+           transform.position = new Vector3(transform.position.x, transform.position.y, -74f);
        }
        if (transform.position.z > zBound)
        {
            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
        }
 
+        transform.Translate(0, 0, -verticalInput);
+        transform.Rotate(0, horizontalInput * speed, 0);
+
+        //if(player at the y coordinates of cube1 or cube2... cube10)
+        /*
+            cube.setgravity(1);
+         */
     }
 }
