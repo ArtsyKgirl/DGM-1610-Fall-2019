@@ -7,11 +7,15 @@ public class PlayerControl : MonoBehaviour
     private float speed = 15.0f;
     private Rigidbody playerRb;
     private float zBound = 38.50f;
+    //Game Manager
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        //Finding Game Manager
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -22,9 +26,6 @@ public class PlayerControl : MonoBehaviour
 
         horizontalInput *= Time.deltaTime;
         verticalInput *= Time.deltaTime;
-
-        //playerRb.AddForce(Vector3.forward * speed * verticalInput);
-        //playerRb.AddForce(Vector3.right * speed * horizontalInput);
 
        if (transform.position.z < -74f)
        {
@@ -37,10 +38,13 @@ public class PlayerControl : MonoBehaviour
 
         transform.Translate(0, 0, -verticalInput);
         transform.Rotate(0, horizontalInput * speed, 0);
+    }
 
-        //if(player at the y coordinates of cube1 or cube2... cube10)
-        /*
-            cube.setgravity(1);
-         */
+    public void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.CompareTag("Enemy");
+        gameManager.GameOver();
+
+        gameManager.Finished();
     }
 }
