@@ -5,6 +5,7 @@ using TMPro;
 
 public class Destroy : MonoBehaviour
 {
+<<<<<<< HEAD
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
     // Start is called before the first frame update
@@ -30,11 +31,22 @@ public class Destroy : MonoBehaviour
     {
 
 >>>>>>> A Maze fix
+=======
+    public GameObject Prefab;
+    private Rigidbody playerRb;
+    public float DestroyObjectDelayed = 10f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerRb = GetComponent<Rigidbody>();
+>>>>>>> master
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
         
@@ -53,6 +65,10 @@ public class Destroy : MonoBehaviour
         }
 >>>>>>> A Maze fix
     }
+=======
+
+    }
+>>>>>>> master
 
     //public void DestroyObjectDelayed()
     //{

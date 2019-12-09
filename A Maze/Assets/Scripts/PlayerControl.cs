@@ -6,19 +6,25 @@ public class PlayerControl : MonoBehaviour
 {
     private float speed = 15.0f;
     private Rigidbody playerRb;
+<<<<<<< HEAD
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
     private float zBound = 39f;
 =======
+=======
+>>>>>>> master
     private float zBound = 38.50f;
     //Game Manager
     private GameManager gameManager;
 
+<<<<<<< HEAD
 >>>>>>> Finished Maze
 =======
     private float zBound = 38.50f;
 
 >>>>>>> A Maze fix
+=======
+>>>>>>> master
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,7 @@ public class PlayerControl : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal") * speed;
         float verticalInput = Input.GetAxis("Vertical") * speed;
+<<<<<<< HEAD
 
         horizontalInput *= Time.deltaTime;
         verticalInput *= Time.deltaTime;
@@ -51,6 +58,13 @@ public class PlayerControl : MonoBehaviour
 
        if (transform.position.z < -74f)
 >>>>>>> A Maze fix
+=======
+
+        horizontalInput *= Time.deltaTime;
+        verticalInput *= Time.deltaTime;
+
+       if (transform.position.z < -74f)
+>>>>>>> master
        {
            transform.position = new Vector3(transform.position.x, transform.position.y, -74f);
        }
@@ -59,9 +73,12 @@ public class PlayerControl : MonoBehaviour
            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
        }
 
+<<<<<<< HEAD
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 =======
+=======
+>>>>>>> master
         transform.Translate(0, 0, -verticalInput);
         transform.Rotate(0, horizontalInput * speed, 0);
     }
@@ -72,6 +89,7 @@ public class PlayerControl : MonoBehaviour
         gameManager.GameOver();
 
         gameManager.Finished();
+<<<<<<< HEAD
 >>>>>>> Finished Maze
 =======
         transform.Translate(0, 0, -verticalInput);
@@ -82,5 +100,7 @@ public class PlayerControl : MonoBehaviour
             cube.setgravity(1);
          */
 >>>>>>> A Maze fix
+=======
+>>>>>>> master
     }
 }

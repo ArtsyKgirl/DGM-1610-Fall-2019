@@ -16,6 +16,7 @@ public class CameraRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
 <<<<<<< 7abcb3c41ee95f1302354cd7fdb3f4316cb56ed9
         // transform.position = player.transform.position;
@@ -37,5 +38,8 @@ public class CameraRotate : MonoBehaviour
             //4. Research the point of view.
         }
 >>>>>>> A Maze fix
+=======
+       
+>>>>>>> master
     }
 }
